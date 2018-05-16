@@ -1,22 +1,42 @@
+import {combineReducers} from 'redux';
 
-let rootReducer = (state={ value: 14 }, action) => {
+let animalReducer = (state=[], action) => {
 	switch( action.type ) {
-
-		case 'INCREASE_BY_ONE':
-			return {
-				...state,  // onödig här, bra i mer komplicerade state objekt
-				value: state.value + 1
-			};
-
-		case 'UPDATE':
-			return {
-				...state,
-				value: state.value + action.amount
-			};
+		case 'ADD_ANIMAL':
+			return [...state, action.name];
 
 		default:
 			return state;
 	}
 }
+let counterReducer = (state=14, action) => {
+	switch( action.type ) {
+		case 'INCREASE_BY_ONE':
+			return state + 1;
+
+		case 'UPDATE':
+			return state + action.amount;
+
+		default:
+			return state;
+	}
+}
+let clicksReducer = (state=0, action) => {
+	switch( action.type ) {
+		case 'INCREASE_BY_ONE':
+		case 'UPDATE':
+		case 'ADD_ANIMAL':
+			return state + 1;
+
+		default:
+			return state;
+	}
+}
+
+let rootReducer = combineReducers({
+	value: counterReducer,
+	animals: animalReducer,
+	numberOfClicks: clicksReducer
+});
 
 export default rootReducer;

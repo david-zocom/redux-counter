@@ -8,7 +8,7 @@ class Counter extends Component {
 	render() {
 		return (
 			<div>
-				Value is: 14 or {this.props.value} <br/>
+				Value is: {this.props.value} and you have clicked {this.props.numberOfClicks} times. <br/>
 				<button onClick={this.handleClickIncrease}>Increase</button>
 				<button onClick={event => this.props.dispatch(actionUpdate(-1))}>Decrease</button>
 				<button onClick={event => this.props.dispatch(actionUpdate(100))}>Explode</button>
@@ -24,7 +24,8 @@ class Counter extends Component {
 }
 let mapStateToProps = state => {
 	return {
-		value: state.value
+		value: state.value,
+		numberOfClicks: state.numberOfClicks
 	};
 }
 

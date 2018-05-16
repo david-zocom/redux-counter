@@ -8,7 +8,9 @@ import {createStore} from 'redux';
 import rootReducer from './reducers/reducer.js'
 
 const initialState = {
-	value: 14
+	value: 14,
+	numberOfClicks: 0,
+	animals: []
 };
 
 
