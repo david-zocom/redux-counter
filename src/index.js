@@ -10,7 +10,11 @@ import rootReducer from './reducers/reducer.js'
 const initialState = {
 	value: 14,
 	numberOfClicks: 0,
-	animals: []
+	animals: [],
+	world: {
+		fetchState: 0,
+		worldData: null
+	}
 };
 
 
