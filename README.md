@@ -1,3 +1,8 @@
+## Archived
+This repository was made for educational purposes. It will not be updated. Be aware that although principles in the code may be accurate, you will need to update the packages used to eliminate security risks.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
